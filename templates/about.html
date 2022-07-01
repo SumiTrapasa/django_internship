@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1> {{title|capfirst|title}}</h1>
+<h1> hello world </h1>
+<p>
+    {{my_text|upper}},{{my_number}},{{my_list}},
+    {{html_text}},{{html_text|safe}}
+</p>
+
+<ul>
+    {% for abc in my_list %}
+    {% if abc == 333 %}
+    <li> {{forloop.counter}}-{{abc|add:22}} </li>
+    {% elif abc == "ABC" %}
+    <li>this is not a netwok</li>
+    {% else %}
+    <li> {{forloop.counter}}-{{abc}} </li>
+    {% endif %}
+    {% endfor %}
+</ul>
+<h1> hello world </h1>
+{% endblock content%}
